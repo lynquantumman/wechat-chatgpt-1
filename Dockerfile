@@ -8,6 +8,7 @@ RUN apt-get install -y wget \
     && rm -rf /var/lib/apt/lists/* \
     && echo "Chrome: " && google-chrome --version
 WORKDIR /app
+RUN mkdir -p /app/public
 COPY package*.json ./
 RUN npm install
 COPY . .
